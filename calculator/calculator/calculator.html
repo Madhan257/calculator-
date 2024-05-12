@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            CALCULATOR
+        </title>
+    </head>
+    <body class="bg">
+        
+        
+        <style>
+            .bg{
+                background-size: cover;
+                /* background-position: center; */
+                background-repeat: no-repeat;
+                background-image: url(https://img.freepik.com/free-photo/maple-leaf-border-background-orange-watercolor-autumn-season_53876-128735.jpg?t=st=1715535124~exp=1715538724~hmac=9f72e5c1d8306cb7ed6d674915dd1725e19ecf7eb485f101d065ed412a91c410&w=1060);
+                /* height: 92vh; */
+                width: 124vh;
+            }
+        input:hover{
+            background: #ffc766;
+            color: black;
+        }
+
+        .buttonstyle{
+            border-style: none;
+            padding: 15px 32px;
+            background-color:black;
+            color:#ffc766;
+        }
+
+        h1{
+            color:#00334d;
+        }
+
+        div{
+            margin-top: 10%;
+            margin-left: 55%;
+        }
+        </style>
+
+        <script>
+            function find(){
+                /*var expression_ref = document.getElementById("area");
+                var expression =expression_ref.value;
+                expression_ref.value = eval(expression);*/
+                document.getElementById("area").value=eval(document.getElementById("area").value);
+            }
+
+            function clearAll(){
+                document.getElementById("area").value=' ';
+            }
+
+            function dispalyInTextArea(n){
+                 document.getElementById("area").value = document.getElementById("area").value+n;
+            }
+            
+            function Del(){
+                var s=document.getElementById("area").value;
+                var l=document.getElementById("area").value.length;
+                document.getElementById("area").value=s.substr(0,l-1);
+            }
+        </script>
+
+        <div>
+            <form>
+                <table class="table" cellspacing ="0" cellpadding ="6">
+                    <caption><h1>CALCULATOR</h1></caption>
+                
+                    <tr><td colspan="6"><textarea cols="46" rows="3" id="area"></textarea></td></tr>
+                    <tr>
+                        <td><input class = "buttonstyle" type="button" value="AC" onclick="clearAll()"></td>
+                        <td colspan="2"><input class = "buttonstyle" type="button" value="           DEL           " onclick ="Del()" size="3"></td>
+                        </td><td><input class = "buttonstyle" type="button" value="/" onclick="dispalyInTextArea('/')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class = "buttonstyle" type="button" value="1" onclick="dispalyInTextArea('1')"></td>
+                        <td><input class = "buttonstyle" type="button" value="2" onclick="dispalyInTextArea('2')"></td>
+                        <td><input class = "buttonstyle" type="button" value="3" onclick="dispalyInTextArea('3')"></td>
+                        <td><input class = "buttonstyle" type="button" value="x" onclick="dispalyInTextArea('*')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class = "buttonstyle" type="button" value="4" onclick="dispalyInTextArea('4')"></td>
+                        <td><input class = "buttonstyle" type="button" value="5" onclick="dispalyInTextArea('5')"></td>
+                        <td><input class = "buttonstyle" type="button" value="6" onclick="dispalyInTextArea('6')"></td>
+                        <td><input class = "buttonstyle" type="button" value="-" onclick="dispalyInTextArea('-')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class = "buttonstyle" type="button" value="7" onclick="dispalyInTextArea(7)"></td>
+                        <td><input class = "buttonstyle" type="button" value="8" onclick="dispalyInTextArea(8)"></td>
+                        <td><input class = "buttonstyle" type="button" value="9" onclick="dispalyInTextArea(9)"></td>
+                        <td><input class = "buttonstyle" type="button" value="+" onclick="dispalyInTextArea('+')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class = "buttonstyle" type="button" value="." onclick="dispalyInTextArea('.')"></td>
+                        <td><input class = "buttonstyle" type="button" value="0" onclick="dispalyInTextArea('0')"></td>
+                        <td><input class = "buttonstyle" type="button" value="(" onclick="dispalyInTextArea('(')"></td>
+                        <td><input class = "buttonstyle" type="button" value=")" onclick="dispalyInTextArea(')')"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td colspan="4"><input class = "buttonstyle" type="button" value="                                      =                                       " onclick="find()"></td>
+                    </tr>
+                </table>
+            </form>
+            <style>
+                .table{
+                    padding-left: 10%;
+                }
+            </style>
+        </div>
+    </body>
+</html>
